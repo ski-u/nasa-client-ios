@@ -80,10 +80,10 @@ public struct SettingsView: View {
                     NavigationLink {
                         LicenseListView()
                             .licenseViewStyle(.withRepositoryAnchorLink)
-                            .navigationTitle(Text("Acknowledgement", bundle: .module))
+                            .navigationTitle(Text("Open Source Licenses", bundle: .module))
                     } label: {
                         Label {
-                            Text("Acknowledgement", bundle: .module)
+                            Text("Open Source Licenses", bundle: .module)
                         } icon: {
                             Image(systemName: "wrench.and.screwdriver.fill")
                                 .foregroundColor(.gray)

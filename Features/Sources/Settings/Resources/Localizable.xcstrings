@@ -1,16 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Acknowledgement" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "謝辞"
-          }
-        }
-      }
-    },
     "API key" : {
       "localizations" : {
         "ja" : {
@@ -107,6 +97,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "オン"
+          }
+        }
+      }
+    },
+    "Open Source Licenses" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オープンソースライセンス"
           }
         }
       }
