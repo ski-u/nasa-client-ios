@@ -15,6 +15,9 @@ jobs:
   test:
     runs-on: macos-26
     timeout-minutes: 20
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v6
       - name: Cache SPM build artifacts
