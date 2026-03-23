@@ -1,4 +1,4 @@
-name: resolve-package-dependencies
+name: Resolve Dependencies
 
 on:
   pull_request:
