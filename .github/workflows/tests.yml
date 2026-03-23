@@ -27,8 +27,6 @@ jobs:
           key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
           restore-keys: |
             ${{ runner.os }}-spm-
-      - name: Show Xcode version
-        run: xcodebuild -version
       - name: Run tests
         run: |
           xcodebuild \
