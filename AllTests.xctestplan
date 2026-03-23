@@ -13,6 +13,7 @@
   },
   "testTargets" : [
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:NASAClient.xcodeproj",
         "identifier" : "02DE09262D0DCB9D0071B411",
@@ -20,6 +21,7 @@
       }
     },
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Features",
         "identifier" : "ModelsTests",
@@ -27,6 +29,7 @@
       }
     },
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Features",
         "identifier" : "DateFormattingTests",
@@ -34,6 +37,7 @@
       }
     },
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Features",
         "identifier" : "SettingsTests",
@@ -41,6 +45,7 @@
       }
     },
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Features",
         "identifier" : "AstronomyPictureTests",
@@ -48,6 +53,7 @@
       }
     },
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Features",
         "identifier" : "AppFeatureTests",
