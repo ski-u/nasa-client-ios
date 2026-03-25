@@ -15,9 +15,40 @@
     {
       "parallelizable" : true,
       "target" : {
+        "containerPath" : "container:Features",
+        "identifier" : "AppFeatureTests",
+        "name" : "AppFeatureTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
         "containerPath" : "container:NASAClient.xcodeproj",
         "identifier" : "02DE09262D0DCB9D0071B411",
         "name" : "NASAClientTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Features",
+        "identifier" : "SpaceWeatherTests",
+        "name" : "SpaceWeatherTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Features",
+        "identifier" : "AstronomyPictureTests",
+        "name" : "AstronomyPictureTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Features",
+        "identifier" : "SettingsTests",
+        "name" : "SettingsTests"
       }
     },
     {
@@ -34,30 +65,6 @@
         "containerPath" : "container:Features",
         "identifier" : "DateFormattingTests",
         "name" : "DateFormattingTests"
-      }
-    },
-    {
-      "parallelizable" : true,
-      "target" : {
-        "containerPath" : "container:Features",
-        "identifier" : "SettingsTests",
-        "name" : "SettingsTests"
-      }
-    },
-    {
-      "parallelizable" : true,
-      "target" : {
-        "containerPath" : "container:Features",
-        "identifier" : "AstronomyPictureTests",
-        "name" : "AstronomyPictureTests"
-      }
-    },
-    {
-      "parallelizable" : true,
-      "target" : {
-        "containerPath" : "container:Features",
-        "identifier" : "AppFeatureTests",
-        "name" : "AppFeatureTests"
       }
     }
   ],
