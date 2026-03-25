@@ -166,6 +166,6 @@ let package = Package(
         .testTarget(
             name: "SpaceWeatherTests",
             dependencies: ["SpaceWeather"]
-        )
+        ),
     ]
 )
