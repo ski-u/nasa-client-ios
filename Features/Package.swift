@@ -157,7 +157,11 @@ let package = Package(
         ),
         .target(
             name: "SpaceWeather",
-            dependencies: []
+            dependencies: [
+                "APIClient",
+                "SharedUI",
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+            ]
         ),
         .testTarget(
             name: "SpaceWeatherTests",
