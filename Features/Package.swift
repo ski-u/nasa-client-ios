@@ -101,6 +101,7 @@ let package = Package(
             dependencies: [
                 "AstronomyPicture",
                 "Settings",
+                "SpaceWeather",
             ]
         ),
         .testTarget(

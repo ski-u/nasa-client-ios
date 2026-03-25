@@ -2,6 +2,7 @@ import AstronomyPicture
 import ComposableArchitecture
 import Models
 import Settings
+import SpaceWeather
 import SwiftUI
 
 public struct AppView: View {
@@ -44,6 +45,14 @@ public struct AppView: View {
                 }
             }
             
+            SpaceWeatherView(store: store.scope(state: \.spaceWeather, action: \.spaceWeather))
+                .tabItem {
+                    VStack {
+                        Image(systemName: "bolt.fill")
+                        Text("Space Weather", bundle: .module)
+                    }
+                }
+            
             SettingsView(store: store.scope(state: \.settings, action: \.settings))
                 .tabItem {
                     VStack {
@@ -67,6 +76,8 @@ public struct AppView: View {
             switch sidebarItem {
             case .today:
                 TodayView(store: store.scope(state: \.today, action: \.today))
+            case .spaceWeather:
+                SpaceWeatherView(store: store.scope(state: \.spaceWeather, action: \.spaceWeather))
             case .setting:
                 SettingsView(store: store.scope(state: \.settings, action: \.settings))
             case .none:
@@ -77,12 +88,15 @@ public struct AppView: View {
     
     private enum SidebarItem: CaseIterable {
         case today
+        case spaceWeather
         case setting
         
         var displayName: LocalizedStringKey {
             switch self {
             case .today:
                 "Today"
+            case .spaceWeather:
+                "Space Weather"
             case .setting:
                 "Settings"
             }
@@ -92,6 +106,8 @@ public struct AppView: View {
             switch self {
             case .today:
                 Image(systemName: "moon.stars")
+            case .spaceWeather:
+                Image(systemName: "bolt.fill")
             case .setting:
                 Image(systemName: "gear")
             }

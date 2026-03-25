@@ -11,6 +11,16 @@
         }
       }
     },
+    "Space Weather" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宇宙天気"
+          }
+        }
+      }
+    },
     "Today" : {
       "localizations" : {
         "ja" : {
