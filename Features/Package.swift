@@ -48,6 +48,10 @@ let package = Package(
             name: "SharedUI",
             targets: ["SharedUI"]
         ),
+        .library(
+            name: "SpaceWeather",
+            targets: ["SpaceWeather"]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/cybozu/LicenseList.git", exact: "2.3.0"),
@@ -150,5 +154,13 @@ let package = Package(
             name: "SharedUI",
             dependencies: []
         ),
+        .target(
+            name: "SpaceWeather",
+            dependencies: []
+        ),
+        .testTarget(
+            name: "SpaceWeatherTests",
+            dependencies: ["SpaceWeather"]
+        )
     ]
 )
