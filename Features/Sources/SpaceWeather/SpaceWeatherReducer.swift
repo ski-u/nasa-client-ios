@@ -3,7 +3,7 @@ import ComposableArchitecture
 import Models
 
 @Reducer
-public struct SpaceWeatherReducer : Sendable {
+public struct SpaceWeatherReducer: Sendable {
     @ObservableState
     public struct State: Equatable {
         var error: TextState?
@@ -37,17 +37,17 @@ public struct SpaceWeatherReducer : Sendable {
                     return .none
                 }
                 return fetchStorms(state: &state)
-                
+
             case .pulledToRefresh:
                 return fetchStorms(state: &state)
-                
+
             case .retryButtonTapped:
                 return fetchStorms(state: &state)
-                
+
             case let .stormsResponse(.success(storms)):
                 state.storms = storms
                 return .none
-                
+
             case let .stormsResponse(.failure(error)):
                 state.error = .init(error.localizedDescription)
                 return .none

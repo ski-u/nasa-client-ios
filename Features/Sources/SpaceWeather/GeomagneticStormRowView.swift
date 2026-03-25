@@ -17,7 +17,7 @@ struct GeomagneticStormRowView: View {
                 }
                 
                 Spacer()
-                            
+                
                 Text(storm.intensityLabel)
                     .font(.caption)
                     .foregroundStyle(storm.kpColor)
