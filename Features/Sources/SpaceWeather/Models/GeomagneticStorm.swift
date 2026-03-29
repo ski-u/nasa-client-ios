@@ -14,7 +14,7 @@ extension GeomagneticStorm {
         }
     }
     
-    var intensityLabel: String {
+    var intensityLabel: LocalizedStringKey {
         switch maxKpIndex {
         case 9...: "Extreme"
         case 8...: "Severe"

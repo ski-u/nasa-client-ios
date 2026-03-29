@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Extreme" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "超大規模"
+          }
+        }
+      }
+    },
     "Geomagnetic Storms" : {
       "localizations" : {
         "ja" : {
@@ -13,6 +23,26 @@
     },
     "Kp %@" : {
       "shouldTranslate" : false
+    },
+    "Minor" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小規模"
+          }
+        }
+      }
+    },
+    "Moderate" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中規模"
+          }
+        }
+      }
     },
     "No Events" : {
       "localizations" : {
@@ -34,12 +64,42 @@
         }
       }
     },
+    "Quiet" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "静穏"
+          }
+        }
+      }
+    },
+    "Severe" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "激甚"
+          }
+        }
+      }
+    },
     "Space Weather" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "宇宙天気"
+          }
+        }
+      }
+    },
+    "Strong" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大規模"
           }
         }
       }
