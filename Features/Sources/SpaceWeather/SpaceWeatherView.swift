@@ -14,22 +14,26 @@ public struct SpaceWeatherView: View {
         NavigationStack {
             Group {
                 if let storms = store.storms {
-                    if storms.isEmpty {
-                        ContentUnavailableView(
-                            String(localized: "No Events", bundle: .module),
-                            systemImage: "bolt.slash",
-                            description: Text(
-                                "No geomagnetic storms in the past 30 days",
-                                bundle: .module
-                            )
-                        )
-                    } else {
-                        List {
-                            stormsSection(storms: storms)
+                    Group {
+                        if storms.isEmpty {
+                            ScrollView {
+                                ContentUnavailableView(
+                                    String(localized: "No Events", bundle: .module),
+                                    systemImage: "bolt.slash",
+                                    description: Text(
+                                        "No geomagnetic storms in the past 30 days",
+                                        bundle: .module
+                                    )
+                                )
+                            }
+                        } else {
+                            List {
+                                stormsSection(storms: storms)
+                            }
                         }
-                        .refreshable {
-                            await store.send(.pulledToRefresh).finish()
-                        }
+                    }
+                    .refreshable {
+                        await store.send(.pulledToRefresh).finish()
                     }
                 } else if let error = store.error {
                     ErrorView(
