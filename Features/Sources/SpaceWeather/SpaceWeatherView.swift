@@ -80,7 +80,7 @@ public struct SpaceWeatherView: View {
                     .init(
                         id: "2026-02-10T00:00:00-GST-002",
                         startTime: "2026-02-10T12:00Z",
-                        maxKpIndex: 5.0,
+                        maxKpIndex: 6.0,
                     ),
                     .init(
                         id: "2026-01-28T00:00:00-GST-003",

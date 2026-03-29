@@ -6,8 +6,10 @@ extension GeomagneticStorm {
     var kpColor: Color {
         switch maxKpIndex {
         case 9...: .red
+        case 8...: Color(red: 1.0, green: 0.3, blue: 0.0)
         case 7...: .orange
-        case 5...: .yellow
+        case 6...: .yellow
+        case 5...: .green
         default: .green
         }
     }
@@ -34,7 +36,7 @@ extension GeomagneticStorm {
     
     static let placeholders: [Self] = [
         .init(id: "1", startTime: "2024-01-01T00:00Z", maxKpIndex: 8.0),
-        .init(id: "2", startTime: "2024-01-02T00:00Z", maxKpIndex: 5.0),
+        .init(id: "2", startTime: "2024-01-02T00:00Z", maxKpIndex: 6.0),
         .init(id: "3", startTime: "2024-01-03T00:00Z", maxKpIndex: 3.0),
     ]
 }
