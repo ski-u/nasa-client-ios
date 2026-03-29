@@ -6,24 +6,20 @@ struct GeomagneticStormRowView: View {
     
     var body: some View {
         Label {
-            HStack {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Kp \(storm.maxKpIndex, format: .number.precision(.fractionLength(1)))")
-                        .font(.headline)
-                    
-                    Text(storm.formattedStartTime)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
-                
-                Spacer()
-                
+            VStack(alignment: .leading) {
                 Text(storm.intensityLabel, bundle: .module)
                     .font(.caption.bold())
                     .foregroundStyle(storm.kpColor)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
                     .background(storm.kpColor.opacity(0.15), in: Capsule())
+                
+                Text("Kp \(storm.maxKpIndex, format: .number.precision(.fractionLength(1)))")
+                    .font(.headline)
+                
+                Text(storm.formattedStartTime)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
             }
         } icon: {
             Image(systemName: "circle.fill")
