@@ -19,8 +19,11 @@ struct GeomagneticStormRowView: View {
                 Spacer()
                 
                 Text(storm.intensityLabel, bundle: .module)
-                    .font(.caption)
+                    .font(.caption.bold())
                     .foregroundStyle(storm.kpColor)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(storm.kpColor.opacity(0.15), in: Capsule())
             }
         } icon: {
             Image(systemName: "circle.fill")
