@@ -17,7 +17,7 @@ struct DateFormatStylesTests {
             day: 7,
             hour: 23,
             minute: 45,
-            second: 12
+            second: 12,
         )
         let date = calendar.date(from: components)!
         

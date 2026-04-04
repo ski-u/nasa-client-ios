@@ -48,13 +48,13 @@ private extension Date.ParseStrategy {
             format:
                 "\(year: .defaultDigits)-\(month: .twoDigits)-\(day: .twoDigits)T\(hour: .twoDigits(clock: .twentyFourHour, hourCycle: .zeroBased)):\(minute: .twoDigits)\(timeZone: .iso8601(.short))",
             locale: Locale(identifier: "en_US_POSIX"),
-            timeZone: .gmt
+            timeZone: .gmt,
         ),
         .init(
             format:
                 "\(year: .defaultDigits)-\(month: .twoDigits)-\(day: .twoDigits)T\(hour: .twoDigits(clock: .twentyFourHour, hourCycle: .zeroBased)):\(minute: .twoDigits):\(second: .twoDigits)\(timeZone: .iso8601(.short))",
             locale: Locale(identifier: "en_US_POSIX"),
-            timeZone: .gmt
+            timeZone: .gmt,
         ),
     ]
 }

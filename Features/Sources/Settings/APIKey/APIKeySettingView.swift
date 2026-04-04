@@ -9,7 +9,7 @@ struct APIKeySettingView: View {
             Section(footer: link) {
                 TextField(
                     String(localized: "Set your API key", bundle: .module),
-                    text: $store.apiKeyInput.rawValue
+                    text: $store.apiKeyInput.rawValue,
                 )
                 .textFieldStyle(.plain)
             }
@@ -33,7 +33,7 @@ struct APIKeySettingView: View {
         VStack(alignment: .leading, spacing: 4) {
             Text(
                 "You can generate your API key on [NASA Open APIs](https://api.nasa.gov)",
-                bundle: .module
+                bundle: .module,
             )
             .font(.caption)
         }

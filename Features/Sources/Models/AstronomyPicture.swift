@@ -17,7 +17,7 @@ public struct AstronomyPicture: Equatable, Sendable {
         hdURL: URL? = nil,
         mediaType: MediaType,
         title: String,
-        url: URL? = nil
+        url: URL? = nil,
     ) {
         self.copyright = copyright
         self.date = date
@@ -36,7 +36,7 @@ public struct AstronomyPicture: Equatable, Sendable {
             hdURL: payload.hdURL.map { URL(string: $0)! },
             mediaType: MediaType(string: payload.mediaType),
             title: payload.title,
-            url: payload.url.map { URL(string: $0)! }
+            url: payload.url.map { URL(string: $0)! },
         )
     }
 }
@@ -58,7 +58,7 @@ extension AstronomyPicture {
             hdURL: String? = nil,
             mediaType: String,
             title: String,
-            url: String? = nil
+            url: String? = nil,
         ) {
             self.copyright = copyright
             self.date = date

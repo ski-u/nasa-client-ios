@@ -12,7 +12,7 @@ struct GeomagneticStormTests {
                 .init(kpIndex: 2.0),
                 .init(kpIndex: 4.0),
                 .init(kpIndex: 6.0),
-            ]
+            ],
         )
         
         let model = GeomagneticStorm(payload: payload)
@@ -27,7 +27,7 @@ struct GeomagneticStormTests {
         let payload = GeomagneticStorm.Payload(
             gstID: "id",
             startTime: "2026-02-20T00:00Z",
-            allKpIndex: []
+            allKpIndex: [],
         )
         
         let model = GeomagneticStorm(payload: payload)

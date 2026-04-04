@@ -57,7 +57,7 @@ struct TodayReducerTests {
         func alreadyLoaded() async throws {
             let store = TestStore(
                 initialState: TodayReducer.State(
-                    picture: .mockImage(),
+                    picture: .mockImage()
                 )
             ) {
                 TodayReducer()
@@ -72,7 +72,7 @@ struct TodayReducerTests {
         func whenLoading() async throws {
             let store = TestStore(
                 initialState: TodayReducer.State(
-                    isLoading: true,
+                    isLoading: true
                 )
             ) {
                 TodayReducer()
@@ -190,7 +190,7 @@ extension AstronomyPicture {
             hdURL: URL(string: "https://example.com/hd-url")!,
             mediaType: .image,
             title: "title",
-            url: URL(string: "https://example.com/url")!
+            url: URL(string: "https://example.com/url")!,
         )
     }
     
@@ -202,7 +202,7 @@ extension AstronomyPicture {
             hdURL: nil,
             mediaType: .video,
             title: "title",
-            url: URL(string: "https://example.com")!
+            url: URL(string: "https://example.com")!,
         )
     }
 }
