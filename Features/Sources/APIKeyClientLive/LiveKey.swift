@@ -18,7 +18,7 @@ extension APIKeyClient: DependencyKey {
             },
             setKey: {
                 keychain.accessibility(.whenUnlockedThisDeviceOnly)["APIKey"] = $0?.rawValue
-            }
+            },
         )
     }
 }

@@ -19,9 +19,9 @@ extension APIClient: DependencyKey {
                     queryItems: [
                         URLQueryItem(
                             name: "start_date",
-                            value: LocalDate().addingMonths(-1).description
+                            value: LocalDate().addingMonths(-1).description,
                         )
-                    ]
+                    ],
                 )
                 return payloads.map(AstronomyPicture.init).reversed()
             },
@@ -32,20 +32,20 @@ extension APIClient: DependencyKey {
                     queryItems: [
                         URLQueryItem(name: "startDate", value: startDate),
                         URLQueryItem(name: "endDate", value: endDate),
-                    ]
+                    ],
                 )
                 return payloads.map(GeomagneticStorm.init).sorted { $0.startTime > $1.startTime }
             },
             fetchTodayPicture: {
                 let payload: AstronomyPicture.Payload = try await fetch(path: "/planetary/apod")
                 return AstronomyPicture(payload: payload)
-            }
+            },
         )
     }
     
     private static func fetch<T: Decodable>(
         path: String,
-        queryItems: [URLQueryItem] = []
+        queryItems: [URLQueryItem] = [],
     ) async throws -> T {
         guard let apiKey = apiKeyClient.getKey() else {
             throw NASAClientError.missingAPIKey

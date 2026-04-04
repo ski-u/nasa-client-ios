@@ -15,7 +15,7 @@ public struct AstronomyPictureList: Sendable {
             error: TextState? = nil,
             isLoaded: Bool = false,
             isLoading: Bool = false,
-            pictures: [AstronomyPicture] = []
+            pictures: [AstronomyPicture] = [],
         ) {
             self.error = error
             self.isLoaded = isLoaded

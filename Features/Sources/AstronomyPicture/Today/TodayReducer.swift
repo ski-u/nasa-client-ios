@@ -21,7 +21,7 @@ public struct TodayReducer: Sendable {
             error: TextState? = nil,
             isLoading: Bool = false,
             path: StackState<Path.State> = .init([]),
-            picture: AstronomyPicture? = nil
+            picture: AstronomyPicture? = nil,
         ) {
             self.error = error
             self.isLoading = isLoading

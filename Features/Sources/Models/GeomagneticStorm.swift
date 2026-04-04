@@ -6,7 +6,7 @@ public struct GeomagneticStorm: Equatable, Sendable, Identifiable {
     public init(
         id: String,
         startTime: String,
-        maxKpIndex: Double
+        maxKpIndex: Double,
     ) {
         self.id = id
         self.startTime = startTime
@@ -17,7 +17,7 @@ public struct GeomagneticStorm: Equatable, Sendable, Identifiable {
         self.init(
             id: payload.gstID,
             startTime: payload.startTime,
-            maxKpIndex: payload.allKpIndex.map(\.kpIndex).max() ?? 0
+            maxKpIndex: payload.allKpIndex.map(\.kpIndex).max() ?? 0,
         )
     }
 }
@@ -31,7 +31,7 @@ extension GeomagneticStorm {
         public init(
             gstID: String,
             startTime: String,
-            allKpIndex: [KpIndex]
+            allKpIndex: [KpIndex],
         ) {
             self.gstID = gstID
             self.startTime = startTime

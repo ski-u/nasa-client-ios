@@ -53,7 +53,7 @@ struct FullScreenImageView_Previews: PreviewProvider {
         FullScreenImageView(
             closeButtonTapped: {},
             hdImageURL: nil,
-            image: Image(systemName: "photo")
+            image: Image(systemName: "photo"),
         )
     }
 }

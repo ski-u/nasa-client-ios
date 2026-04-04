@@ -62,7 +62,7 @@ private extension AstronomyPicture {
         date: .init(),
         explanation: "placeholder explanation",
         mediaType: .image,
-        title: "placeholder title"
+        title: "placeholder title",
     )
 }
 
@@ -83,8 +83,10 @@ private extension AstronomyPicture {
                         )!,
                         mediaType: .image,
                         title: "M27: The Dumbbell Nebula",
-                        url: URL(string: "https://apod.nasa.gov/apod/image/2107/M27_Falls_960.jpg")!
-                    )
+                        url: URL(
+                            string: "https://apod.nasa.gov/apod/image/2107/M27_Falls_960.jpg"
+                        )!,
+                    ),
                 )
             ) {
                 EmptyReducer()
@@ -108,8 +110,8 @@ private extension AstronomyPicture {
                         hdURL: nil,
                         mediaType: .video,
                         title: "GW200115: Simulation of a Black Hole Merging with a Neutron Star",
-                        url: URL(string: "https://www.youtube.com/embed/V_Kd4YBNs7c?rel=0")!
-                    )
+                        url: URL(string: "https://www.youtube.com/embed/V_Kd4YBNs7c?rel=0")!,
+                    ),
                 )
             ) {
                 EmptyReducer()
@@ -133,8 +135,8 @@ private extension AstronomyPicture {
                         hdURL: nil,
                         mediaType: .other,
                         title: "Caught",
-                        url: nil
-                    )
+                        url: nil,
+                    ),
                 )
             ) {
                 EmptyReducer()

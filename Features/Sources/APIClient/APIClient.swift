@@ -56,6 +56,6 @@ private extension GeomagneticStorm {
     static let mock = Self(
         id: "2026-02-20T00:00:00-GST-001",
         startTime: "2026-02-20T00:00Z",
-        maxKpIndex: 5.33
+        maxKpIndex: 5.33,
     )
 }

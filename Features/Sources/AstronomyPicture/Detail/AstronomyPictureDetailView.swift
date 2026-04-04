@@ -45,8 +45,11 @@ struct AstronomyPictureDetailView: View {
                     let responses = try await session.translations(
                         from: [
                             .init(sourceText: picture.title, clientIdentifier: "title"),
-                            .init(sourceText: picture.explanation, clientIdentifier: "explanation"),
-                        ],
+                            .init(
+                                sourceText: picture.explanation,
+                                clientIdentifier: "explanation",
+                            ),
+                        ]
                     )
                     
                     responses.forEach {
@@ -97,7 +100,7 @@ struct AstronomyPictureDetailView: View {
                                     isPresentedFullScreenImage = false
                                 },
                                 hdImageURL: picture.hdURL,
-                                image: image
+                                image: image,
                             )
                         }
                 case let .failure(error):
@@ -137,7 +140,7 @@ struct AstronomyPictureDetailView: View {
                 )!,
                 mediaType: .image,
                 title: "M27: The Dumbbell Nebula",
-                url: URL(string: "https://apod.nasa.gov/apod/image/2107/M27_Falls_960.jpg")!
+                url: URL(string: "https://apod.nasa.gov/apod/image/2107/M27_Falls_960.jpg")!,
             )
         )
     }
@@ -154,7 +157,7 @@ struct AstronomyPictureDetailView: View {
                 hdURL: nil,
                 mediaType: .video,
                 title: "GW200115: Simulation of a Black Hole Merging with a Neutron Star",
-                url: URL(string: "https://www.youtube.com/embed/V_Kd4YBNs7c?rel=0")!
+                url: URL(string: "https://www.youtube.com/embed/V_Kd4YBNs7c?rel=0")!,
             )
         )
     }
@@ -171,7 +174,7 @@ struct AstronomyPictureDetailView: View {
                 hdURL: nil,
                 mediaType: .other,
                 title: "Caught",
-                url: nil
+                url: nil,
             )
         )
     }

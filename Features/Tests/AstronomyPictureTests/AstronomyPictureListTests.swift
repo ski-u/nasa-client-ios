@@ -61,7 +61,7 @@ struct AstronomyPictureListTests {
             let store = TestStore(
                 initialState: AstronomyPictureList.State(
                     isLoaded: true,
-                    pictures: [.mockImage()]
+                    pictures: [.mockImage()],
                 )
             ) {
                 AstronomyPictureList()

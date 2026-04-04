@@ -10,7 +10,7 @@ struct SpaceWeatherReducerTests {
         @Test
         func success() async {
             let store = TestStore(
-                initialState: SpaceWeatherReducer.State(),
+                initialState: SpaceWeatherReducer.State()
             ) {
                 SpaceWeatherReducer()
             }
@@ -30,7 +30,7 @@ struct SpaceWeatherReducerTests {
         @Test
         func failure() async {
             let store = TestStore(
-                initialState: SpaceWeatherReducer.State(),
+                initialState: SpaceWeatherReducer.State()
             ) {
                 SpaceWeatherReducer()
             }
@@ -51,8 +51,8 @@ struct SpaceWeatherReducerTests {
         func alreadyLoaded() async {
             let store = TestStore(
                 initialState: SpaceWeatherReducer.State(
-                    storms: [.mock],
-                ),
+                    storms: [.mock]
+                )
             ) {
                 SpaceWeatherReducer()
             }
@@ -67,8 +67,8 @@ struct SpaceWeatherReducerTests {
         func success() async {
             let store = TestStore(
                 initialState: SpaceWeatherReducer.State(
-                    storms: [],
-                ),
+                    storms: []
+                )
             ) {
                 SpaceWeatherReducer()
             }
@@ -89,8 +89,8 @@ struct SpaceWeatherReducerTests {
         func failure() async {
             let store = TestStore(
                 initialState: SpaceWeatherReducer.State(
-                    storms: [],
-                ),
+                    storms: []
+                )
             ) {
                 SpaceWeatherReducer()
             }
@@ -114,8 +114,8 @@ struct SpaceWeatherReducerTests {
         func success() async {
             let store = TestStore(
                 initialState: SpaceWeatherReducer.State(
-                    error: .init("error"),
-                ),
+                    error: .init("error")
+                )
             ) {
                 SpaceWeatherReducer()
             }
@@ -138,8 +138,8 @@ struct SpaceWeatherReducerTests {
         func failure() async {
             let store = TestStore(
                 initialState: SpaceWeatherReducer.State(
-                    error: .init("error"),
-                ),
+                    error: .init("error")
+                )
             ) {
                 SpaceWeatherReducer()
             }

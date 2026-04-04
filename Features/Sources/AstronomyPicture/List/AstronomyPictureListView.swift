@@ -30,7 +30,7 @@ struct AstronomyPictureListView: View {
     private var content: some View {
         ForEach(
             store.isLoading ? AstronomyPicture.placeholderList : store.pictures,
-            id: \.date.description
+            id: \.date.description,
         ) { picture in
             NavigationLink {
                 AstronomyPictureDetailView(picture: picture)
@@ -56,7 +56,7 @@ private extension AstronomyPicture {
             date: .init(year: 2025, month: 1, day: 1).addingMonths($0),
             explanation: "",
             mediaType: .image,
-            title: String(repeating: " ", count: .random(in: 10...50))
+            title: String(repeating: " ", count: .random(in: 10...50)),
         )
     }
 }

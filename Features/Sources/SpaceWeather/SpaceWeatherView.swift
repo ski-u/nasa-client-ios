@@ -22,8 +22,8 @@ public struct SpaceWeatherView: View {
                                     systemImage: "bolt.slash",
                                     description: Text(
                                         "No geomagnetic storms in the past 30 days",
-                                        bundle: .module
-                                    )
+                                        bundle: .module,
+                                    ),
                                 )
                             }
                         } else {
@@ -87,8 +87,8 @@ public struct SpaceWeatherView: View {
                         startTime: "2026-01-28T06:00Z",
                         maxKpIndex: 3.0,
                     ),
-                ],
-            ),
+                ]
+            )
         ) {
             EmptyReducer()
         }
@@ -99,8 +99,8 @@ public struct SpaceWeatherView: View {
     SpaceWeatherView(
         store: Store(
             initialState: SpaceWeatherReducer.State(
-                storms: [],
-            ),
+                storms: []
+            )
         ) {
             EmptyReducer()
         }
@@ -111,8 +111,8 @@ public struct SpaceWeatherView: View {
     SpaceWeatherView(
         store: Store(
             initialState: SpaceWeatherReducer.State(
-                storms: nil,
-            ),
+                storms: nil
+            )
         ) {
             EmptyReducer()
         }
@@ -123,8 +123,8 @@ public struct SpaceWeatherView: View {
     SpaceWeatherView(
         store: Store(
             initialState: SpaceWeatherReducer.State(
-                error: .init("Something went wrong"),
-            ),
+                error: .init("Something went wrong")
+            )
         ) {
             EmptyReducer()
         }

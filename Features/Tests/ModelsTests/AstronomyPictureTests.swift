@@ -15,7 +15,7 @@ struct AstronomyPictureTests {
             hdURL: "https://example.com/hd-url",
             mediaType: "image",
             title: "title",
-            url: "https://example.com/url"
+            url: "https://example.com/url",
         )
         
         let model = AstronomyPicture(
@@ -25,7 +25,7 @@ struct AstronomyPictureTests {
             hdURL: URL(string: "https://example.com/hd-url")!,
             mediaType: .image,
             title: "title",
-            url: URL(string: "https://example.com/url")!
+            url: URL(string: "https://example.com/url")!,
         )
         
         #expect(AstronomyPicture(payload: payload) == model)
@@ -40,7 +40,7 @@ struct AstronomyPictureTests {
             hdURL: nil,
             mediaType: "image",
             title: "title",
-            url: nil
+            url: nil,
         )
         
         let model = AstronomyPicture(
@@ -50,7 +50,7 @@ struct AstronomyPictureTests {
             hdURL: nil,
             mediaType: .image,
             title: "title",
-            url: nil
+            url: nil,
         )
         
         #expect(AstronomyPicture(payload: payload) == model)

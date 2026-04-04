@@ -10,54 +10,54 @@ let package = Package(
     products: [
         .library(
             name: "APIClient",
-            targets: ["APIClient"]
+            targets: ["APIClient"],
         ),
         .library(
             name: "APIClientLive",
-            targets: ["APIClientLive"]
+            targets: ["APIClientLive"],
         ),
         .library(
             name: "APIKeyClient",
-            targets: ["APIKeyClient"]
+            targets: ["APIKeyClient"],
         ),
         .library(
             name: "APIKeyClientLive",
-            targets: ["APIKeyClientLive"]
+            targets: ["APIKeyClientLive"],
         ),
         .library(
             name: "AppFeature",
-            targets: ["AppFeature"]
+            targets: ["AppFeature"],
         ),
         .library(
             name: "AstronomyPicture",
-            targets: ["AstronomyPicture"]
+            targets: ["AstronomyPicture"],
         ),
         .library(
             name: "DateFormatting",
-            targets: ["DateFormatting"]
+            targets: ["DateFormatting"],
         ),
         .library(
             name: "Models",
-            targets: ["Models"]
+            targets: ["Models"],
         ),
         .library(
             name: "Settings",
-            targets: ["Settings"]
+            targets: ["Settings"],
         ),
         .library(
             name: "SharedUI",
-            targets: ["SharedUI"]
+            targets: ["SharedUI"],
         ),
         .library(
             name: "SpaceWeather",
-            targets: ["SpaceWeather"]
+            targets: ["SpaceWeather"],
         ),
     ],
     dependencies: [
         .package(url: "https://github.com/cybozu/LicenseList.git", exact: "2.3.0"),
         .package(
             url: "https://github.com/pointfreeco/swift-composable-architecture.git",
-            from: "1.25.5"
+            from: "1.25.5",
         ),
         .package(url: "https://github.com/pointfreeco/swift-dependencies.git", from: "1.12.0"),
         .package(url: "https://github.com/kishikawakatsumi/KeychainAccess.git", from: "4.2.2"),
@@ -70,7 +70,7 @@ let package = Package(
                 "Models",
                 .product(name: "Dependencies", package: "swift-dependencies"),
                 .product(name: "DependenciesMacros", package: "swift-dependencies"),
-            ]
+            ],
         ),
         .target(
             name: "APIClientLive",
@@ -79,7 +79,7 @@ let package = Package(
                 "APIKeyClientLive",
                 "DateFormatting",
                 .product(name: "LocalDate", package: "swift-local-date"),
-            ]
+            ],
         ),
         .target(
             name: "APIKeyClient",
@@ -87,14 +87,14 @@ let package = Package(
                 "Models",
                 .product(name: "Dependencies", package: "swift-dependencies"),
                 .product(name: "DependenciesMacros", package: "swift-dependencies"),
-            ]
+            ],
         ),
         .target(
             name: "APIKeyClientLive",
             dependencies: [
                 "APIKeyClient",
                 .product(name: "KeychainAccess", package: "KeychainAccess"),
-            ]
+            ],
         ),
         .target(
             name: "AppFeature",
@@ -102,11 +102,11 @@ let package = Package(
                 "AstronomyPicture",
                 "Settings",
                 "SpaceWeather",
-            ]
+            ],
         ),
         .testTarget(
             name: "AppFeatureTests",
-            dependencies: ["AppFeature"]
+            dependencies: ["AppFeature"],
         ),
         .target(
             name: "AstronomyPicture",
@@ -114,29 +114,29 @@ let package = Package(
                 "APIClient",
                 "SharedUI",
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
-            ]
+            ],
         ),
         .testTarget(
             name: "AstronomyPictureTests",
-            dependencies: ["AstronomyPicture"]
+            dependencies: ["AstronomyPicture"],
         ),
         .target(
             name: "DateFormatting",
-            dependencies: []
+            dependencies: [],
         ),
         .testTarget(
             name: "DateFormattingTests",
-            dependencies: ["DateFormatting"]
+            dependencies: ["DateFormatting"],
         ),
         .target(
             name: "Models",
             dependencies: [
                 .product(name: "LocalDate", package: "swift-local-date")
-            ]
+            ],
         ),
         .testTarget(
             name: "ModelsTests",
-            dependencies: ["Models"]
+            dependencies: ["Models"],
         ),
         .target(
             name: "Settings",
@@ -149,11 +149,11 @@ let package = Package(
         ),
         .testTarget(
             name: "SettingsTests",
-            dependencies: ["Settings"]
+            dependencies: ["Settings"],
         ),
         .target(
             name: "SharedUI",
-            dependencies: []
+            dependencies: [],
         ),
         .target(
             name: "SpaceWeather",
@@ -161,11 +161,11 @@ let package = Package(
                 "APIClient",
                 "SharedUI",
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
-            ]
+            ],
         ),
         .testTarget(
             name: "SpaceWeatherTests",
-            dependencies: ["SpaceWeather"]
+            dependencies: ["SpaceWeather"],
         ),
-    ]
+    ],
 )
