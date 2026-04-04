@@ -20,12 +20,8 @@ public struct AppView: View {
         Group {
             switch UIDevice.current.userInterfaceIdiom {
             case .phone:
-                if #available(iOS 26, *) {
-                    tabView
-                        .tabBarMinimizeBehavior(.onScrollDown)
-                } else {
-                    tabView
-                }
+                tabView
+                    .tabBarMinimizeBehavior(.onScrollDown)
             default:
                 sidebarView
             }
