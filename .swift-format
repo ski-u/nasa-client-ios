@@ -5,7 +5,7 @@
     "spaces" : 4
   },
   "lineBreakBeforeEachArgument" : true,
-  "multilineTrailingCommaBehavior": "alwaysUsed",
+  "multiElementCollectionTrailingCommas" : true,
   "prioritizeKeepingFunctionOutputTogether" : true,
   "rules": {
       "AlwaysUseLowerCamelCase": false,
