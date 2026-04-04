@@ -1,7 +1,7 @@
 import ComposableArchitecture
 import Models
 import SwiftUI
-import Translation
+@preconcurrency import Translation
 
 struct AstronomyPictureDetailView: View {
     let picture: AstronomyPicture
