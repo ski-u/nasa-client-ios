@@ -1,6 +1,6 @@
-# NASAClientApp
+# NASA Client iOS
 
-[![CI](https://github.com/ski-u/nasa-client-app/actions/workflows/tests.yml/badge.svg)](https://github.com/ski-u/nasa-client-app/actions/workflows/tests.yml)
+[![CI](https://github.com/ski-u/nasa-client-ios/actions/workflows/tests.yml/badge.svg)](https://github.com/ski-u/nasa-client-app/actions/workflows/tests.yml)
 
 > [!note]
 > This is an experimental project to learn iOS app development :apple:
