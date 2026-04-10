@@ -1,3 +1,4 @@
+import APIKeyClient
 import ComposableArchitecture
 import Testing
 
@@ -22,5 +23,22 @@ struct APIKeySettingTests {
         }
     }
     
-    // TODO: add test case for `updateButtonTapped`
+    @Test
+    func updateButtonTapped() async throws {
+        let store = TestStore(
+            initialState: APIKeySetting.State(
+                apiKeyInput: .init(rawValue: "updated"),
+            )
+        ) {
+            APIKeySetting()
+        }
+        
+        store.dependencies.apiKeyClient = .inMemory
+        
+        await store.send(.updateButtonTapped)
+        
+        await store.receive(\.delegate.updated)
+        
+        #expect(store.dependencies.apiKeyClient.getKey() == .init(rawValue: "updated"))
+    }
 }
