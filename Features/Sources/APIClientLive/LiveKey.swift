@@ -58,7 +58,19 @@ extension APIClient: DependencyKey {
                 URLQueryItem(name: "api_key", value: apiKey.rawValue)
             ] + queryItems
         
-        let (data, _) = try await URLSession.shared.data(from: urlComponents.url!)
+        let (data, response) = try await URLSession.shared.data(from: urlComponents.url!)
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NASAClientError.unexpectedResponse
+        }
+        let statusCode = httpResponse.statusCode
+        
+        guard (200..<300).contains(statusCode) else {
+            let errorMessage = (try? JSONDecoder().decode(NASAErrorResponse.self, from: data))
+                .flatMap {
+                    $0.error?.message ?? $0.msg
+                }
+            throw NASAClientError.httpError(statusCode: statusCode, message: errorMessage)
+        }
         
         return try JSONDecoder().decode(T.self, from: data)
     }

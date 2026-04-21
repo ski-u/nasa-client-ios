@@ -10,6 +10,16 @@
           }
         }
       }
+    },
+    "Received an unexpected non-HTTP response" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "予期しないレスポンスを受け取りました"
+          }
+        }
+      }
     }
   },
   "version" : "1.1"
