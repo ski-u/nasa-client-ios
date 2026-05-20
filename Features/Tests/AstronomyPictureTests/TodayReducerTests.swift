@@ -20,7 +20,7 @@ struct TodayReducerTests {
             }
             
             let mock = AstronomyPicture.mockImage()
-            store.dependencies.apiClient.fetchTodayPicture = { mock }
+            store.dependencies.apiClient.fetchAstronomyPicture = { _ in mock }
             
             await store.send(.onAppear) {
                 $0.isLoading = true
@@ -41,7 +41,7 @@ struct TodayReducerTests {
             }
             
             let error = NSError(domain: "test", code: 1)
-            store.dependencies.apiClient.fetchTodayPicture = { throw error }
+            store.dependencies.apiClient.fetchAstronomyPicture = { _ in throw error }
             
             await store.send(.onAppear) {
                 $0.isLoading = true
@@ -95,7 +95,7 @@ struct TodayReducerTests {
             }
             
             let mock = AstronomyPicture.mockImage()
-            store.dependencies.apiClient.fetchTodayPicture = { mock }
+            store.dependencies.apiClient.fetchAstronomyPicture = { _ in mock }
             
             await store.send(.pulledToRefresh) {
                 $0.isLoading = true
@@ -116,7 +116,7 @@ struct TodayReducerTests {
             }
             
             let error = NSError(domain: "test", code: 1)
-            store.dependencies.apiClient.fetchTodayPicture = { throw error }
+            store.dependencies.apiClient.fetchAstronomyPicture = { _ in throw error }
             
             await store.send(.pulledToRefresh) {
                 $0.isLoading = true
@@ -142,7 +142,7 @@ struct TodayReducerTests {
             }
             
             let mock = AstronomyPicture.mockImage()
-            store.dependencies.apiClient.fetchTodayPicture = { mock }
+            store.dependencies.apiClient.fetchAstronomyPicture = { _ in mock }
             
             await store.send(.retryButtonTapped) {
                 $0.error = nil
@@ -166,7 +166,7 @@ struct TodayReducerTests {
             }
             
             let error = NSError(domain: "test", code: 1)
-            store.dependencies.apiClient.fetchTodayPicture = { throw error }
+            store.dependencies.apiClient.fetchAstronomyPicture = { _ in throw error }
             
             await store.send(.retryButtonTapped) {
                 $0.error = nil

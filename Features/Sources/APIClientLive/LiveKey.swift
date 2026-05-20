@@ -13,6 +13,18 @@ extension APIClient: DependencyKey {
     
     public static var liveValue: Self {
         .init(
+            fetchAstronomyPicture: {
+                let payload: AstronomyPicture.Payload = try await fetch(
+                    path: "/planetary/apod",
+                    queryItems: [
+                        URLQueryItem(
+                            name: "date",
+                            value: $0.description,
+                        )
+                    ],
+                )
+                return AstronomyPicture(payload: payload)
+            },
             fetchAstronomyPictures: {
                 let payloads: [AstronomyPicture.Payload] = try await fetch(
                     path: "/planetary/apod",
@@ -35,10 +47,6 @@ extension APIClient: DependencyKey {
                     ],
                 )
                 return payloads.map(GeomagneticStorm.init).sorted { $0.startTime > $1.startTime }
-            },
-            fetchTodayPicture: {
-                let payload: AstronomyPicture.Payload = try await fetch(path: "/planetary/apod")
-                return AstronomyPicture(payload: payload)
             },
         )
     }

@@ -85,7 +85,7 @@ public struct TodayReducer: Sendable {
             await send(
                 .response(
                     Result {
-                        try await client.fetchTodayPicture()
+                        try await client.fetchAstronomyPicture(date: .init())
                     }
                 )
             )

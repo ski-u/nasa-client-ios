@@ -70,6 +70,7 @@ let package = Package(
                 "Models",
                 .product(name: "Dependencies", package: "swift-dependencies"),
                 .product(name: "DependenciesMacros", package: "swift-dependencies"),
+                .product(name: "LocalDate", package: "swift-local-date"),
             ],
         ),
         .target(

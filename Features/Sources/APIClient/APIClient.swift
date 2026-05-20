@@ -1,12 +1,13 @@
 import Dependencies
 import DependenciesMacros
+import LocalDate
 import Models
 
 @DependencyClient
 public struct APIClient: Sendable {
+    public var fetchAstronomyPicture: @Sendable (_ date: LocalDate) async throws -> AstronomyPicture
     public var fetchAstronomyPictures: @Sendable () async throws -> [AstronomyPicture]
     public var fetchGeomagneticStorms: @Sendable (_ days: Int) async throws -> [GeomagneticStorm]
-    public var fetchTodayPicture: @Sendable () async throws -> AstronomyPicture
 }
 
 extension APIClient: TestDependencyKey {
@@ -14,6 +15,10 @@ extension APIClient: TestDependencyKey {
     
     public static var mockValue: Self {
         return .init(
+            fetchAstronomyPicture: { _ in
+                try await Task.sleep(for: .seconds(2))
+                return .mock
+            },
             fetchAstronomyPictures: {
                 try await Task.sleep(for: .seconds(2))
                 return [.mock]
@@ -21,10 +26,6 @@ extension APIClient: TestDependencyKey {
             fetchGeomagneticStorms: { _ in
                 try await Task.sleep(for: .seconds(2))
                 return [.mock]
-            },
-            fetchTodayPicture: {
-                try await Task.sleep(for: .seconds(2))
-                return .mock
             },
         )
     }
