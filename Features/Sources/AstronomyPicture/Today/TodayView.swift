@@ -14,7 +14,7 @@ public struct TodayView: View {
     }
     
     public var body: some View {
-        NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
+        NavigationStack(path: $store.scope(\.path, action: \.path)) {
             Group {
                 if let error = store.error {
                     ErrorView(

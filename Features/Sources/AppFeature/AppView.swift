@@ -32,7 +32,7 @@ public struct AppView: View {
     private var tabView: some View {
         TabView {
             NavigationStack {
-                TodayView(store: store.scope(state: \.today, action: \.today))
+                TodayView(store: store.scope(\.today, action: \.today))
             }
             .tabItem {
                 VStack {
@@ -41,7 +41,7 @@ public struct AppView: View {
                 }
             }
             
-            SpaceWeatherView(store: store.scope(state: \.spaceWeather, action: \.spaceWeather))
+            SpaceWeatherView(store: store.scope(\.spaceWeather, action: \.spaceWeather))
                 .tabItem {
                     VStack {
                         Image(systemName: "bolt.fill")
@@ -49,7 +49,7 @@ public struct AppView: View {
                     }
                 }
             
-            SettingsView(store: store.scope(state: \.settings, action: \.settings))
+            SettingsView(store: store.scope(\.settings, action: \.settings))
                 .tabItem {
                     VStack {
                         Image(systemName: "gear")
@@ -71,11 +71,11 @@ public struct AppView: View {
         } detail: {
             switch sidebarItem {
             case .today:
-                TodayView(store: store.scope(state: \.today, action: \.today))
+                TodayView(store: store.scope(\.today, action: \.today))
             case .spaceWeather:
-                SpaceWeatherView(store: store.scope(state: \.spaceWeather, action: \.spaceWeather))
+                SpaceWeatherView(store: store.scope(\.spaceWeather, action: \.spaceWeather))
             case .setting:
-                SettingsView(store: store.scope(state: \.settings, action: \.settings))
+                SettingsView(store: store.scope(\.settings, action: \.settings))
             case .none:
                 EmptyView()
             }

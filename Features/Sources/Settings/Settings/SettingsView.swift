@@ -11,7 +11,7 @@ public struct SettingsView: View {
     }
     
     public var body: some View {
-        NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
+        NavigationStack(path: $store.scope(\.path, action: \.path)) {
             List {
                 Section {
                     NavigationLink(
