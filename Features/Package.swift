@@ -59,7 +59,7 @@ let package = Package(
             url: "https://github.com/pointfreeco/swift-composable-architecture.git",
             from: "1.26.0",
         ),
-        .package(url: "https://github.com/pointfreeco/swift-dependencies.git", from: "1.13.1"),
+        .package(url: "https://github.com/pointfreeco/swift-dependencies.git", from: "1.14.1"),
         .package(url: "https://github.com/kishikawakatsumi/KeychainAccess.git", from: "4.2.2"),
         .package(url: "https://github.com/konomae/swift-local-date.git", from: "0.5.0"),
     ],
