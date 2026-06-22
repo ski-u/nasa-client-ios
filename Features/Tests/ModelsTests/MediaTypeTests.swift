@@ -5,7 +5,7 @@ import Testing
 @MainActor
 struct MediaTypeTests {
     @Test
-    func initFromString() async throws {
+    func initFromString() {
         #expect(MediaType(string: "image") == .image)
         #expect(MediaType(string: "video") == .video)
         #expect(MediaType(string: "other") == .other)

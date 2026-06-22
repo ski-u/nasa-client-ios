@@ -7,7 +7,7 @@ import Testing
 @MainActor
 struct APIKeySettingTests {
     @Test
-    func onAppear() async throws {
+    func onAppear() async {
         let store = TestStore(
             initialState: APIKeySetting.State()
         ) {
@@ -24,7 +24,7 @@ struct APIKeySettingTests {
     }
     
     @Test
-    func updateButtonTapped() async throws {
+    func updateButtonTapped() async {
         let store = TestStore(
             initialState: APIKeySetting.State(
                 apiKeyInput: .init(rawValue: "updated"),

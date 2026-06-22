@@ -10,7 +10,7 @@ import Testing
 @MainActor
 struct AstronomyPictureReducerTests {
     @Test
-    func astronomyPictureImageTapped() async throws {
+    func astronomyPictureImageTapped() async {
         let store = TestStore(
             initialState: AstronomyPictureReducer.State(
                 date: .init(),
@@ -28,7 +28,7 @@ struct AstronomyPictureReducerTests {
     @MainActor
     struct CalendarIntegration {
         @Test
-        func calendarButtonTapped() async throws {
+        func calendarButtonTapped() async {
             let store = TestStore(
                 initialState: AstronomyPictureReducer.State(
                     date: .init(),
@@ -43,7 +43,7 @@ struct AstronomyPictureReducerTests {
         }
         
         @Test
-        func differentDateSelected() async throws {
+        func differentDateSelected() async {
             let store = TestStore(
                 initialState: AstronomyPictureReducer.State(
                     date: .init(year: 2026, month: 6, day: 1),
@@ -70,7 +70,7 @@ struct AstronomyPictureReducerTests {
         }
         
         @Test
-        func sameDateSelected() async throws {
+        func sameDateSelected() async {
             let date = LocalDate(year: 2026, month: 6, day: 1)
             let store = TestStore(
                 initialState: AstronomyPictureReducer.State(
@@ -91,7 +91,7 @@ struct AstronomyPictureReducerTests {
     @MainActor
     struct OnAppear {
         @Test
-        func success() async throws {
+        func success() async {
             let store = TestStore(
                 initialState: AstronomyPictureReducer.State(
                     date: .init(),
@@ -111,7 +111,7 @@ struct AstronomyPictureReducerTests {
         }
         
         @Test
-        func failure() async throws {
+        func failure() async {
             let store = TestStore(
                 initialState: AstronomyPictureReducer.State(
                     date: .init(),
@@ -131,7 +131,7 @@ struct AstronomyPictureReducerTests {
         }
         
         @Test
-        func alreadyLoaded() async throws {
+        func alreadyLoaded() async {
             let store = TestStore(
                 initialState: AstronomyPictureReducer.State(
                     date: .init(),
@@ -150,7 +150,7 @@ struct AstronomyPictureReducerTests {
     @MainActor
     struct Retry {
         @Test
-        func success() async throws {
+        func success() async {
             let store = TestStore(
                 initialState: AstronomyPictureReducer.State(
                     date: .init(),
@@ -173,7 +173,7 @@ struct AstronomyPictureReducerTests {
         }
         
         @Test
-        func failure() async throws {
+        func failure() async {
             let store = TestStore(
                 initialState: AstronomyPictureReducer.State(
                     date: .init(),

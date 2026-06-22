@@ -6,7 +6,7 @@ import Testing
 @MainActor
 struct SettingsTests {
     @Test
-    func onAppear() async throws {
+    func onAppear() async {
         let store = TestStore(
             initialState: Settings.State()
         ) {
