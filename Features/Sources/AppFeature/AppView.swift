@@ -8,7 +8,7 @@ import SwiftUI
 public struct AppView: View {
     var store: StoreOf<AppReducer>
     
-    @State private var sidebarItem: SidebarItem? = .today
+    @State private var sidebarItem: SidebarItem? = .astronomyPicture
     
     @Shared(.appStorage("colorScheme")) var userColorScheme = UserColorScheme.system
     
@@ -32,7 +32,7 @@ public struct AppView: View {
     private var tabView: some View {
         TabView {
             NavigationStack {
-                TodayView(store: store.scope(\.today, action: \.today))
+                AstronomyPictureView(store: store.scope(\.astronomyPicture, action: \.astronomyPicture))
             }
             .tabItem {
                 VStack {
@@ -70,8 +70,8 @@ public struct AppView: View {
             }
         } detail: {
             switch sidebarItem {
-            case .today:
-                TodayView(store: store.scope(\.today, action: \.today))
+            case .astronomyPicture:
+                AstronomyPictureView(store: store.scope(\.astronomyPicture, action: \.astronomyPicture))
             case .spaceWeather:
                 SpaceWeatherView(store: store.scope(\.spaceWeather, action: \.spaceWeather))
             case .setting:
@@ -83,13 +83,13 @@ public struct AppView: View {
     }
     
     private enum SidebarItem: CaseIterable {
-        case today
+        case astronomyPicture
         case spaceWeather
         case setting
         
         var displayName: LocalizedStringKey {
             switch self {
-            case .today:
+            case .astronomyPicture:
                 "Today"
             case .spaceWeather:
                 "Space Weather"
@@ -100,7 +100,7 @@ public struct AppView: View {
         
         var icon: Image {
             switch self {
-            case .today:
+            case .astronomyPicture:
                 Image(systemName: "moon.stars")
             case .spaceWeather:
                 Image(systemName: "bolt.fill")
