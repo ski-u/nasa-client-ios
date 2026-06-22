@@ -26,6 +26,69 @@ struct AstronomyPictureReducerTests {
     }
     
     @MainActor
+    struct CalendarIntegration {
+        @Test
+        func calendarButtonTapped() async throws {
+            let store = TestStore(
+                initialState: AstronomyPictureReducer.State(
+                    date: .init(),
+                )
+            ) {
+                AstronomyPictureReducer()
+            }
+            
+            await store.send(.calendarButtonTapped) {
+                $0.isCalendarPresented = true
+            }
+        }
+        
+        @Test
+        func differentDateSelected() async throws {
+            let store = TestStore(
+                initialState: AstronomyPictureReducer.State(
+                    date: .init(year: 2026, month: 6, day: 1),
+                    isCalendarPresented: true,
+                    picture: .mockImage(),
+                )
+            ) {
+                AstronomyPictureReducer()
+            }
+            
+            let mockVideo = AstronomyPicture.mockVideo()
+            store.dependencies.apiClient.fetchAstronomyPicture = { _ in mockVideo }
+            
+            let newDate = LocalDate(year: 2026, month: 6, day: 2)
+            await store.send(.dateSelected(newDate)) {
+                $0.date = newDate
+                $0.isCalendarPresented = false
+                $0.picture = nil
+            }
+            
+            await store.receive(\.response.success) {
+                $0.picture = mockVideo
+            }
+        }
+        
+        @Test
+        func sameDateSelected() async throws {
+            let date = LocalDate(year: 2026, month: 6, day: 1)
+            let store = TestStore(
+                initialState: AstronomyPictureReducer.State(
+                    date: date,
+                    isCalendarPresented: true,
+                    picture: .mockImage(),
+                )
+            ) {
+                AstronomyPictureReducer()
+            }
+            
+            await store.send(.dateSelected(date)) {
+                $0.isCalendarPresented = false
+            }
+        }
+    }
+    
+    @MainActor
     struct OnAppear {
         @Test
         func success() async throws {

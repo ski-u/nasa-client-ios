@@ -9,17 +9,20 @@ public struct AstronomyPictureReducer: Sendable {
     public struct State: Equatable {
         var date: LocalDate
         var error: TextState?
+        var isCalendarPresented: Bool
         var isFullScreenImagePresented: Bool
         var picture: AstronomyPicture?
         
         public init(
             date: LocalDate,
             error: TextState? = nil,
+            isCalendarPresented: Bool = false,
             isFullScreenImagePresented: Bool = false,
             picture: AstronomyPicture? = nil,
         ) {
             self.date = date
             self.error = error
+            self.isCalendarPresented = isCalendarPresented
             self.isFullScreenImagePresented = isFullScreenImagePresented
             self.picture = picture
         }
@@ -28,6 +31,8 @@ public struct AstronomyPictureReducer: Sendable {
     public enum Action: BindableAction {
         case astronomyPictureImageTapped
         case binding(BindingAction<State>)
+        case calendarButtonTapped
+        case dateSelected(LocalDate)
         case onAppear
         case response(Result<AstronomyPicture, any Error>)
         case retryButtonTapped
@@ -47,6 +52,19 @@ public struct AstronomyPictureReducer: Sendable {
                 return .none
                 
             case .binding:
+                return .none
+                
+            case .calendarButtonTapped:
+                state.isCalendarPresented = true
+                return .none
+                
+            case let .dateSelected(date):
+                state.isCalendarPresented = false
+                
+                if state.date != date {
+                    state.date = date
+                    return fetchAstronomyPicture(state: &state)
+                }
                 return .none
                 
             case .onAppear:
@@ -71,6 +89,8 @@ public struct AstronomyPictureReducer: Sendable {
     }
     
     private func fetchAstronomyPicture(state: inout State) -> Effect<Action> {
+        enum CancelID { case fetch }
+        
         state.picture = nil
         
         return .run { [date = state.date] send in
@@ -82,5 +102,6 @@ public struct AstronomyPictureReducer: Sendable {
                 )
             )
         }
+        .cancellable(id: CancelID.fetch, cancelInFlight: true)
     }
 }

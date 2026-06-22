@@ -34,8 +34,22 @@ public struct AstronomyPictureView: View {
         }
         .navigationTitle(Text(store.date.description))
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button(action: { store.send(.calendarButtonTapped) }) {
+                    Image(systemName: "calendar")
+                }
+            }
+        }
         .onAppear {
             store.send(.onAppear)
+        }
+        .sheet(isPresented: $store.isCalendarPresented) {
+            LocalDatePickerView(
+                selection: store.date,
+                onCompleted: { store.send(.dateSelected($0)) },
+            )
+            .presentationDetents([.medium, .large])
         }
     }
 }
