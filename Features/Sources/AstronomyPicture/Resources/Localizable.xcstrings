@@ -1,34 +1,11 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Astronomy Pictures" : {
-      "shouldTranslate" : false
-    },
     "copyright: %@" : {
       "shouldTranslate" : false
     },
     "Failed to open:" : {
       "shouldTranslate" : false
-    },
-    "History" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "過去分"
-          }
-        }
-      }
-    },
-    "Today" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "今日"
-          }
-        }
-      }
     },
     "Unexpected error occurred" : {
       "localizations" : {
