@@ -7,6 +7,16 @@
     "Failed to open:" : {
       "shouldTranslate" : false
     },
+    "Select date" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日付を選択"
+          }
+        }
+      }
+    },
     "Unexpected error occurred" : {
       "localizations" : {
         "ja" : {
