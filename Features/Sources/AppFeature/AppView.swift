@@ -32,7 +32,9 @@ public struct AppView: View {
     private var tabView: some View {
         TabView {
             NavigationStack {
-                AstronomyPictureView(store: store.scope(\.astronomyPicture, action: \.astronomyPicture))
+                AstronomyPictureView(
+                    store: store.scope(\.astronomyPicture, action: \.astronomyPicture)
+                )
             }
             .tabItem {
                 VStack {
@@ -71,7 +73,9 @@ public struct AppView: View {
         } detail: {
             switch sidebarItem {
             case .astronomyPicture:
-                AstronomyPictureView(store: store.scope(\.astronomyPicture, action: \.astronomyPicture))
+                AstronomyPictureView(
+                    store: store.scope(\.astronomyPicture, action: \.astronomyPicture)
+                )
             case .spaceWeather:
                 SpaceWeatherView(store: store.scope(\.spaceWeather, action: \.spaceWeather))
             case .setting:

@@ -50,14 +50,14 @@ public struct AstronomyPictureReducer: Sendable {
             case .astronomyPictureImageTapped:
                 state.isFullScreenImagePresented = true
                 return .none
-                
+
             case .binding:
                 return .none
-                
+
             case .calendarButtonTapped:
                 state.isCalendarPresented = true
                 return .none
-                
+
             case let .dateSelected(date):
                 state.isCalendarPresented = false
                 
@@ -66,21 +66,21 @@ public struct AstronomyPictureReducer: Sendable {
                     return fetchAstronomyPicture(state: &state)
                 }
                 return .none
-                
+
             case .onAppear:
                 if state.picture != nil {
                     return .none
                 }
                 return fetchAstronomyPicture(state: &state)
-                
+
             case let .response(.success(picture)):
                 state.picture = picture
                 return .none
-                
+
             case let .response(.failure(error)):
                 state.error = .init(error.localizedDescription)
                 return .none
-                
+
             case .retryButtonTapped:
                 state.error = nil
                 return fetchAstronomyPicture(state: &state)
