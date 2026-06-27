@@ -3,22 +3,19 @@
 [![CI](https://github.com/ski-u/nasa-client-ios/actions/workflows/tests.yml/badge.svg)](https://github.com/ski-u/nasa-client-app/actions/workflows/tests.yml)
 
 > [!note]
-> This is an experimental project to learn iOS app development :apple:
+> A personal iOS app project for learning purposes :apple:
 
-## API: [NASA APIs](https://api.nasa.gov)
+## API
 
-### Astronomy Picture of the Day
-
-- Official website: https://apod.nasa.gov/apod/astropix.html
-- GitHub repo: https://github.com/nasa/apod-api
+- [NASA APIs](https://api.nasa.gov)
 
 ## Features
 
-### See Astronomy Pictures
+### Browsing Astronomy Picture of the Day
 
-| Today's picture | History |
-| -- | -- |
-| ![](./Screenshots/astronomy-picture-today.gif) | ![](./Screenshots/astronomy-picture-history.gif) |
+- API:  https://github.com/nasa/apod-api
+
+![](./Screenshots/apod.gif)
 
 ### Accesibility Support
 
