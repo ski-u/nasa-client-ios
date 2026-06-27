@@ -6,7 +6,6 @@ import Models
 @DependencyClient
 public struct APIClient: Sendable {
     public var fetchAstronomyPicture: @Sendable (_ date: LocalDate) async throws -> AstronomyPicture
-    public var fetchAstronomyPictures: @Sendable () async throws -> [AstronomyPicture]
     public var fetchGeomagneticStorms: @Sendable (_ days: Int) async throws -> [GeomagneticStorm]
 }
 
@@ -18,10 +17,6 @@ extension APIClient: TestDependencyKey {
             fetchAstronomyPicture: { _ in
                 try await Task.sleep(for: .seconds(2))
                 return .mock
-            },
-            fetchAstronomyPictures: {
-                try await Task.sleep(for: .seconds(2))
-                return [.mock]
             },
             fetchGeomagneticStorms: { _ in
                 try await Task.sleep(for: .seconds(2))

@@ -25,18 +25,6 @@ extension APIClient: DependencyKey {
                 )
                 return AstronomyPicture(payload: payload)
             },
-            fetchAstronomyPictures: {
-                let payloads: [AstronomyPicture.Payload] = try await fetch(
-                    path: "/planetary/apod",
-                    queryItems: [
-                        URLQueryItem(
-                            name: "start_date",
-                            value: LocalDate().addingMonths(-1).description,
-                        )
-                    ],
-                )
-                return payloads.map(AstronomyPicture.init).reversed()
-            },
             fetchGeomagneticStorms: { days in
                 let (startDate, endDate) = dateRange(days: days)
                 let payloads: [GeomagneticStorm.Payload] = try await fetch(
