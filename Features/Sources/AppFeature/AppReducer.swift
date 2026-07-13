@@ -23,15 +23,15 @@ public struct AppReducer {
     public init() {}
     
     public var body: some ReducerOf<Self> {
-        Scope(state: \.astronomyPicture, action: \.astronomyPicture) {
+        Scope(\.astronomyPicture, action: \.astronomyPicture) {
             AstronomyPictureReducer()
         }
         
-        Scope(state: \.settings, action: \.settings) {
+        Scope(\.settings, action: \.settings) {
             Settings()
         }
         
-        Scope(state: \.spaceWeather, action: \.spaceWeather) {
+        Scope(\.spaceWeather, action: \.spaceWeather) {
             SpaceWeatherReducer()
         }
     }
