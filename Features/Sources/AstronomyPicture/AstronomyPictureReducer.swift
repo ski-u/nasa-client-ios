@@ -82,7 +82,6 @@ public struct AstronomyPictureReducer: Sendable {
                 return .none
 
             case .retryButtonTapped:
-                state.error = nil
                 return fetchAstronomyPicture(state: &state)
             }
         }
@@ -91,6 +90,7 @@ public struct AstronomyPictureReducer: Sendable {
     private func fetchAstronomyPicture(state: inout State) -> Effect<Action> {
         enum CancelID { case fetch }
         
+        state.error = nil
         state.picture = nil
         
         return .run { [date = state.date] send in
