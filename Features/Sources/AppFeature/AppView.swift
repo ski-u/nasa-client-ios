@@ -12,17 +12,18 @@ public struct AppView: View {
     
     @Shared(.appStorage("colorScheme")) var userColorScheme = UserColorScheme.system
     
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    
     public init(store: StoreOf<AppReducer>) {
         self.store = store
     }
     
     public var body: some View {
         Group {
-            switch UIDevice.current.userInterfaceIdiom {
-            case .phone:
+            if horizontalSizeClass == .compact {
                 tabView
                     .tabBarMinimizeBehavior(.onScrollDown)
-            default:
+            } else {
                 sidebarView
             }
         }
