@@ -13,7 +13,7 @@ env:
 
 jobs:
   test:
-    runs-on: macos-27
+    runs-on: xcode-27
     timeout-minutes: 20
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
