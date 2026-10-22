@@ -38,7 +38,7 @@
 
 ## Environment
 
-- Xcode 27.0
+- Xcode 27.1
 - Swift 6.4
 
 ## Tech stack
